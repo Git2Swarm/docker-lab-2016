@@ -3,6 +3,7 @@ version: "2"
 services:
 
   gateway:
+    image: gateway
     build: ./gateway
     ports:
       - "8080:80"
@@ -12,6 +13,7 @@ services:
       - "api"
       
   api:
+    image: api
     build: ./strongloop
     ports:
       - "3000:3000"
@@ -26,6 +28,7 @@ services:
       - "db"
 
   db:
+    image: db
     build: ./db
     ports:
       - "27017:27017"
