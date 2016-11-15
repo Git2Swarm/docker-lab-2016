@@ -2,8 +2,8 @@ version: "2"
 
 services:
 
-  gateway:
-    image: gateway
+  nxgateway:
+    image: ${DOCKER_HUB_USER}/nxgateway
     build: ./gateway
     ports:
       - "8080:80"
@@ -13,7 +13,7 @@ services:
       - "api"
       
   api:
-    image: api
+    image: ${DOCKER_HUB_USER}/api
     build: ./strongloop
     ports:
       - "3000:3000"
@@ -28,7 +28,7 @@ services:
       - "db"
 
   db:
-    image: db
+    image: ${DOCKER_HUB_USER}/db
     build: ./db
     ports:
       - "27017:27017"
